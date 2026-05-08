@@ -919,19 +919,15 @@ h1.hero-title em{color:#C9A24C!important;}
   .logo-horiz{width:180px!important;height:44px!important;}
 }
 
-/* WhatsApp button: original green (#25D366) but tooltip says "Text Mordy" */
+/* WhatsApp button: brand green icon-only — both tooltip variants hidden */
 .wa-btn{
   background:#25D366!important;
   box-shadow:0 4px 16px rgba(37,211,102,0.35)!important;
 }
 .wa-btn svg{fill:#fff!important;}
 .wa-btn svg path{fill:#fff!important;}
-.wa-bubble{
-  background:#25D366!important;
-  color:#fff!important;
-  border:none!important;
-}
-.wa-bubble::after{border-left-color:#25D366!important;}
+.wa-bubble,
+.wa-tooltip{display:none!important;}
 
 /* Accessibility button → match the gold/charcoal panel it opens */
 .acc-btn{
