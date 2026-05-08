@@ -934,7 +934,11 @@ h1.hero-title em{color:#C9A24C!important;}
   background:var(--surface-2)!important;
   border:1px solid rgba(201,162,76,0.6)!important;
   box-shadow:0 4px 16px rgba(201,162,76,0.25)!important;
+  /* Lift to mirror WhatsApp button so the sticky CTA bar isn't covered */
+  bottom:80px!important;
 }
+/* Open panel sits above the lifted button */
+.acc-panel{bottom:140px!important;}
 /* Target explicitly blue elements only, leaving fill="none" intact on the wheel */
 .acc-btn svg [fill="#3b82f6"]{fill:var(--gold)!important;}
 .acc-btn svg [stroke="#3b82f6"]{stroke:var(--gold)!important;}
