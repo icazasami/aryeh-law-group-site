@@ -939,6 +939,13 @@ h1.hero-title em{color:#C9A24C!important;}
 }
 /* Open panel sits above the lifted button */
 .acc-panel{bottom:140px!important;}
+
+/* Mobile: sticky CTA is ~198px tall, lift both floating buttons above it */
+@media(max-width:833px){
+  .acc-btn,
+  .wa-btn{bottom:220px!important;}
+  .acc-panel{bottom:280px!important;}
+}
 /* Target explicitly blue elements only, leaving fill="none" intact on the wheel */
 .acc-btn svg [fill="#3b82f6"]{fill:var(--gold)!important;}
 .acc-btn svg [stroke="#3b82f6"]{stroke:var(--gold)!important;}
