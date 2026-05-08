@@ -886,10 +886,8 @@ h1.hero-title em{color:#C9A24C!important;}
    See: /Users/samuelicaza/projects/aryeh-law-group/research/...
    ════════════════════════════════════════════════════════════════ */
 
-/* Logo swap: matte horizontal (navbar/hero/footer) and matte stacked (entry) */
-/* Source files use white-bg JPEGs; CSS filter inverts to dark-mode gold-on-charcoal. */
-/* mix-blend-mode: screen blends the inverted near-black background into the page */
-/* charcoal so no visible "tile" edge appears around the logo. */
+/* Logo: transparent vector SVGs, gold-on-charcoal native (no filter hack). */
+/* Horizontal lockup for navbar/hero/footer; square crest+wordmark for entry. */
 .logo-horiz,
 .logo-hero-bar,
 .logo-footer{
@@ -897,16 +895,12 @@ h1.hero-title em{color:#C9A24C!important;}
   background-size:contain!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
-  filter:invert(1) hue-rotate(180deg);
-  mix-blend-mode:screen;
 }
 .logo-stacked{
   background-image:url('assets/logo-stacked.svg')!important;
   background-size:contain!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
-  filter:invert(1) hue-rotate(180deg);
-  mix-blend-mode:screen;
 }
 
 /* Navbar logo bigger + navbar height bumped to host it */
