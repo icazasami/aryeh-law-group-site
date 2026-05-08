@@ -881,6 +881,64 @@ h1.hero-title em{color:#C9A24C!important;}
 .wa-bubble::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#25D366;}
 .wa-btn:hover .wa-bubble{opacity:1;}
 
+/* ════════════════════════════════════════════════════════════════
+   DESIGN-REVIEW FIXES (2026-05-08)
+   See: /Users/samuelicaza/projects/aryeh-law-group/research/...
+   ════════════════════════════════════════════════════════════════ */
+
+/* Logo swap: matte horizontal (navbar/hero/footer) and matte stacked (entry) */
+/* Source files use white-bg JPEGs; CSS filter inverts to dark-mode gold-on-charcoal. */
+.logo-horiz,
+.logo-hero-bar,
+.logo-footer{
+  background-image:url('assets/logo-horizontal.svg')!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  filter:invert(1) hue-rotate(180deg);
+}
+.logo-stacked{
+  background-image:url('assets/logo-stacked.svg')!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  filter:invert(1) hue-rotate(180deg);
+}
+
+/* WhatsApp button → "Text Mordy" gold treatment (keeps wa.me destination) */
+.wa-btn{
+  background:var(--gold)!important;
+  box-shadow:0 4px 16px rgba(201,162,76,0.35)!important;
+}
+.wa-btn svg{fill:var(--charcoal)!important;}
+.wa-btn svg path{fill:var(--charcoal)!important;}
+.wa-bubble{
+  background:var(--charcoal)!important;
+  color:var(--gold)!important;
+  border:1px solid rgba(201,162,76,0.4)!important;
+}
+.wa-bubble::after{border-left-color:var(--charcoal)!important;}
+
+/* Accessibility button → match the gold/charcoal panel it opens */
+.acc-btn{
+  background:var(--surface-2)!important;
+  border:1px solid rgba(201,162,76,0.6)!important;
+  box-shadow:0 4px 16px rgba(201,162,76,0.25)!important;
+}
+.acc-btn svg circle,
+.acc-btn svg path{fill:var(--gold)!important;}
+
+/* Hide reviews section across all pages until real testimonials land */
+.reviews-section{display:none!important;}
+
+/* Hide SEO keyword blob (preserved in markup for crawlers; the schema.org */
+/* JSON-LD + 8 area pages already cover local SEO without keyword stuffing) */
+.seo-locations{display:none!important;}
+
+/* Entry-screen card numbers — bump opacity for readability */
+.es-card-num{color:rgba(201,162,76,0.55)!important;}
+.es-card-mid .es-card-num{color:rgba(201,162,76,0.85)!important;}
+
 </style>
 </head>
 <body>
@@ -3369,7 +3427,7 @@ h1.hero-title em{color:#C9A24C!important;}
 </div>
 
 
-<a href="https://wa.me/16465048170" target="_blank" class="wa-btn" title="Chat on WhatsApp" aria-label="Contact on WhatsApp">
+<a href="https://wa.me/16465048170" target="_blank" class="wa-btn" title="Text Mordy" aria-label="Text Mordy directly">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.548 4.09 1.508 5.813L.057 23.5l5.735-1.507A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182c5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/>
@@ -3440,7 +3498,7 @@ h1.hero-title em{color:#C9A24C!important;}
 
 </div>
 <div class="sticky" id="sticky"><span class="sticky-text">Call now for a free consultation &mdash; (646) 504-8170</span><div style="display:flex;gap:10px;"><a href="tel:+16465048170" class="sticky-btn">Call Now</a><button class="sticky-btn" data-nav="contact">Free Consultation &rarr;</button></div></div>
-<a href="https://wa.me/16465048170?text=Hi%2C+I+found+your+website+and+I+have+a+legal+question+for+Aryeh+Law+Group." target="_blank" class="wa-btn" aria-label="Chat on WhatsApp"><span class="wa-bubble">Chat on WhatsApp</span><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.548 4.09 1.508 5.813L.057 23.5l5.735-1.507A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182c5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg></a>
+<a href="https://wa.me/16465048170?text=Hi%2C+I+found+your+website+and+I+have+a+legal+question+for+Aryeh+Law+Group." target="_blank" class="wa-btn" aria-label="Text Mordy"><span class="wa-bubble">Text Mordy</span><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.548 4.09 1.508 5.813L.057 23.5l5.735-1.507A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.732.979.997-3.645-.234-.374A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182c5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg></a>
 <button class="acc-btn" onclick="toggleAccPanel()" aria-label="Accessibility"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="4.5" r="1.8" fill="#3b82f6"/><path d="M9 8.5h6l1 4H9.5L9 8.5z" fill="#3b82f6"/><path d="M9.5 12.5L8 20h2l1-5h2l1 5h2l-1.5-7.5z" fill="#3b82f6"/><path d="M7 13C7 11 8.8 9 11 9" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round"/><path d="M15.5 18.5c-1.7 2-4.5 2.5-6.7 1" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="18" r="2.5" stroke="#3b82f6" stroke-width="1.4" fill="none"/></svg></button><div class="acc-panel" id="acc-panel"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><div class="acc-panel-title">Accessibility</div><button onclick="toggleAccPanel()" style="background:none;border:none;color:var(--gray);font-size:16px;cursor:pointer;">&#x2715;</button></div><div class="acc-row"><div class="acc-row-label">Text Size</div><div class="acc-btns"><button class="acc-opt fs-btn" onclick="setFontSize('normal',this)">A</button><button class="acc-opt fs-btn" onclick="setFontSize('lg',this)">A+</button><button class="acc-opt fs-btn" onclick="setFontSize('xl',this)">A++</button></div></div><div class="acc-row"><div class="acc-row-label">High Contrast</div><div class="acc-btns"><button class="acc-opt" id="hc-btn" onclick="toggleContrast(this)">Off</button></div></div><div class="acc-row"><div class="acc-row-label">Reduce Motion</div><div class="acc-btns"><button class="acc-opt" id="rm-btn" onclick="toggleReduceMotion(this)">Off</button></div></div><div class="acc-row"><div class="acc-row-label">Dyslexia Font</div><div class="acc-btns"><button class="acc-opt" id="dy-btn" onclick="toggleDyslexia(this)">Off</button></div></div><div class="acc-row"><div class="acc-row-label">Letter Spacing</div><div class="acc-btns"><button class="acc-opt" id="ls-btn" onclick="toggleLetterSpacing(this)">Off</button></div></div><div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.05);"><button onclick="resetAccessibility()" style="background:none;border:1px solid rgba(255,255,255,0.08);color:var(--gray);font-family:var(--font-text);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;cursor:pointer;width:100%;">Reset All</button></div></div>
 </div>
 <script>
