@@ -844,9 +844,9 @@ h1.hero-title em{color:#C9A24C!important;}
 #entry-screen::after{content:'';position:absolute;inset:20px;border:1px solid rgba(201,162,76,0.08);pointer-events:none;}
 .es-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;}
 .es-inner{position:relative;z-index:2;width:100%;max-width:1100px;display:flex;flex-direction:column;align-items:center;padding:44px 32px 36px;min-height:100vh;justify-content:center;}
-.es-rule{display:block;width:0;height:1px;margin:20px auto 0;background:linear-gradient(90deg,transparent,rgba(201,162,76,0.6),transparent);}
+.es-rule{display:block;width:0;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,rgba(201,162,76,0.6),transparent);}
 @keyframes esExpand{to{width:76px;}}
-.es-tagline{font-family:var(--font-text),sans-serif;font-size:10px;font-weight:400;color:rgba(135,135,135,0.75);letter-spacing:4px;text-transform:uppercase;text-align:center;margin-top:16px;margin-bottom:0;}
+.es-tagline{font-family:var(--font-text),sans-serif;font-size:10px;font-weight:400;color:rgba(135,135,135,0.75);letter-spacing:4px;text-transform:uppercase;text-align:center;margin-top:12px;margin-bottom:0;}
 .es-question{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:400;color:#ffffff;text-align:center;margin-top:18px;margin-bottom:50px;letter-spacing:-0.5px;line-height:1.1;}
 .es-cards{display:grid;grid-template-columns:repeat(3,1fr);width:100%;max-width:980px;border:1px solid rgba(255,255,255,0.05);}
 .es-card{padding:46px 36px 40px;cursor:pointer;position:relative;overflow:hidden;background:rgba(255,255,255,0.022);border-right:1px solid rgba(255,255,255,0.05);transition:background 0.35s ease,transform 0.4s cubic-bezier(0.22,1,0.36,1);}
@@ -897,10 +897,14 @@ h1.hero-title em{color:#C9A24C!important;}
   background-position:center!important;
 }
 .logo-stacked{
-  background-image:url('assets/logo-stacked.svg')!important;
+  background-image:url('assets/logo-stacked-tight.svg')!important;
   background-size:contain!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
+  width:480px!important;height:135px!important;
+}
+@media(max-width:833px){
+  .logo-stacked{width:300px!important;height:84px!important;}
 }
 
 /* Navbar logo bigger + navbar height bumped to host it */
