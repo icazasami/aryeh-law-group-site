@@ -935,8 +935,9 @@ h1.hero-title em{color:#C9A24C!important;}
   border:1px solid rgba(201,162,76,0.6)!important;
   box-shadow:0 4px 16px rgba(201,162,76,0.25)!important;
 }
-.acc-btn svg circle,
-.acc-btn svg path{fill:var(--gold)!important;}
+/* Target explicitly blue elements only, leaving fill="none" intact on the wheel */
+.acc-btn svg [fill="#3b82f6"]{fill:var(--gold)!important;}
+.acc-btn svg [stroke="#3b82f6"]{stroke:var(--gold)!important;}
 
 /* Hide reviews section across all pages until real testimonials land */
 .reviews-section{display:none!important;}
