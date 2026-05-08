@@ -888,6 +888,8 @@ h1.hero-title em{color:#C9A24C!important;}
 
 /* Logo swap: matte horizontal (navbar/hero/footer) and matte stacked (entry) */
 /* Source files use white-bg JPEGs; CSS filter inverts to dark-mode gold-on-charcoal. */
+/* mix-blend-mode: screen blends the inverted near-black background into the page */
+/* charcoal so no visible "tile" edge appears around the logo. */
 .logo-horiz,
 .logo-hero-bar,
 .logo-footer{
@@ -896,6 +898,7 @@ h1.hero-title em{color:#C9A24C!important;}
   background-repeat:no-repeat!important;
   background-position:center!important;
   filter:invert(1) hue-rotate(180deg);
+  mix-blend-mode:screen;
 }
 .logo-stacked{
   background-image:url('assets/logo-stacked.svg')!important;
@@ -903,21 +906,32 @@ h1.hero-title em{color:#C9A24C!important;}
   background-repeat:no-repeat!important;
   background-position:center!important;
   filter:invert(1) hue-rotate(180deg);
+  mix-blend-mode:screen;
 }
 
-/* WhatsApp button → "Text Mordy" gold treatment (keeps wa.me destination) */
+/* Navbar logo bigger + navbar height bumped to host it */
+#navbar{height:88px!important;padding:0 56px!important;}
+#navbar.solid{height:72px!important;}
+.logo-horiz{width:240px!important;height:60px!important;}
+@media(max-width:833px){
+  #navbar{height:72px!important;padding:0 24px!important;}
+  #navbar.solid{height:60px!important;}
+  .logo-horiz{width:180px!important;height:44px!important;}
+}
+
+/* WhatsApp button: original green (#25D366) but tooltip says "Text Mordy" */
 .wa-btn{
-  background:var(--gold)!important;
-  box-shadow:0 4px 16px rgba(201,162,76,0.35)!important;
+  background:#25D366!important;
+  box-shadow:0 4px 16px rgba(37,211,102,0.35)!important;
 }
-.wa-btn svg{fill:var(--charcoal)!important;}
-.wa-btn svg path{fill:var(--charcoal)!important;}
+.wa-btn svg{fill:#fff!important;}
+.wa-btn svg path{fill:#fff!important;}
 .wa-bubble{
-  background:var(--charcoal)!important;
-  color:var(--gold)!important;
-  border:1px solid rgba(201,162,76,0.4)!important;
+  background:#25D366!important;
+  color:#fff!important;
+  border:none!important;
 }
-.wa-bubble::after{border-left-color:var(--charcoal)!important;}
+.wa-bubble::after{border-left-color:#25D366!important;}
 
 /* Accessibility button → match the gold/charcoal panel it opens */
 .acc-btn{
